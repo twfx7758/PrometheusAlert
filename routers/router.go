@@ -91,4 +91,7 @@ func init() {
 	beego.Router("/zabbix/alert", &controllers.ZabbixController{}, "post:ZabbixAlert")
 	//webhook
 	beego.Router("/prometheusalert", &controllers.PrometheusAlertController{}, "get,post:PrometheusAlert")
+
+	//skywalking
+	beego.Router("/skywalking/workwechat", &controllers.SkywalkingController{}, "post:SkywalkingWorkWechat")
 }
