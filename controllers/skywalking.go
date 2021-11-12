@@ -13,11 +13,12 @@ type SkywalkingController struct {
 }
 
 type Skywalking struct {
-	MsgType  string `json:"msgtype"`
-	Message  string `json:"message"`
-	RuleName string `json:"ruleName"`
-	RuleUrl  string `json:"ruleUrl"`
-	State    string `json:"state"`
+	ScopeId      int    `json:"scopeid"`
+	Name         string `json:"name"`
+	Id0          int    `json:"id0"`
+	Id1          int    `json:"id1"`
+	AlarmMessage string `json:"alarmmessage"`
+	StartTime    int    `json:"starttime"`
 }
 
 func (c *SkywalkingController) SkywalkingWorkWechat() {
@@ -33,34 +34,15 @@ func (c *SkywalkingController) SkywalkingWorkWechat() {
 //typeid 为0,触发电话告警和钉钉告警, typeid 为1 仅触发dingding告警
 func SendMessageSkywalking(message Skywalking, typeid int, logsign, ddurl, wxurl, fsurl, txdx, txdh, hwdx, rlydh, alydx, alydh, email, bddx, groupid string) string {
 	Title := beego.AppConfig.String("title")
-	Logourl := beego.AppConfig.String("logourl")
-	Rlogourl := beego.AppConfig.String("rlogourl")
 	var DDtext, RLtext, FStext, WXtext, EmailMessage, titleend string
 	//告警级别定义 0 信息,1 警告,2 一般严重,3 严重,4 灾难
 	AlertLevel := []string{"信息", "警告", "一般严重", "严重", "灾难"}
-	if message.State == "ok" {
-		titleend = "故障恢复信息"
-		model.AlertsFromCounter.WithLabelValues("skywalking", message.Message, "4", "", "resolved").Add(1)
-		DDtext = "## [" + Title + "skywalking" + titleend + "](" + message.RuleUrl + ")\n\n#### " + message.RuleName + "\n\n###### 告警级别：" + AlertLevel[4] + "\n\n###### 开始时间：" + time.Now().Format("2006-01-02 15:04:05") + "\n\n##### " + message.Message + "![" + Title + "](" + Rlogourl + ")"
-		FStext = "[" + Title + "skywalking" + titleend + "](" + message.RuleUrl + ")\n\n" + message.RuleName + "\n\n告警级别：" + AlertLevel[4] + "\n\n开始时间：" + time.Now().Format("2006-01-02 15:04:05") + "\n\n" + message.Message + "![" + Title + "](" + Rlogourl + ")"
-		WXtext = "[" + Title + "skywalking" + titleend + "](" + message.RuleUrl + ")\n>**" + message.RuleName + "**\n>`告警级别:`" + AlertLevel[4] + "\n`开始时间:`" + time.Now().Format("2006-01-02 15:04:05") + "\n" + message.Message
-		PhoneCallMessage = message.Message
-		EmailMessage = ""
-	} else {
-		titleend = "故障告警信息"
-		model.AlertsFromCounter.WithLabelValues("skywalking", message.Message, "4", "", "firing").Add(1)
-		DDtext = "## [" + Title + "skywalking" + titleend + "](" + message.RuleUrl + ")\n\n" + "#### " + message.RuleName + "\n\n" + "###### 告警级别：" + AlertLevel[4] + "\n\n" + "###### 开始时间：" + time.Now().Format("2006-01-02 15:04:05") + "\n\n" + "##### " + message.Message + "\n\n" + "![" + Title + "](" + Logourl + ")"
-		RLtext = "## [" + Title + "skywalking" + titleend + "](" + message.RuleUrl + ")\n\n" + "#### " + message.RuleName + "\n\n" + "###### 告警级别：" + AlertLevel[4] + "\n\n" + "###### 开始时间：" + time.Now().Format("2006-01-02 15:04:05") + "\n\n" + "##### " + message.Message + "\n\n" + "![" + Title + "](" + Logourl + ")"
-		FStext = "[" + Title + "skywalking" + titleend + "](" + message.RuleUrl + ")\n\n" + "" + message.RuleName + "\n\n" + "告警级别：" + AlertLevel[4] + "\n\n" + "开始时间：" + time.Now().Format("2006-01-02 15:04:05") + "\n\n" + "" + message.Message + "\n\n" + "![" + Title + "](" + Logourl + ")"
-		WXtext = "[" + Title + "skywalking" + titleend + "](" + message.RuleUrl + ")\n>**" + message.RuleName + "**\n>`告警级别:`" + AlertLevel[4] + "\n`开始时间:`" + time.Now().Format("2006-01-02 15:04:05") + "\n" + message.Message + "\n"
-		PhoneCallMessage = message.Message
-		EmailMessage = `<h1><a href =` + message.RuleUrl + `>` + Title + "skywalking" + titleend + `</a></h1>
-				<h2>` + message.RuleName + `</h2>
-				<h5>告警级别：` + AlertLevel[4] + `</h5>
-				<h5>开始时间：` + time.Now().Format("2006-01-02 15:04:05") + `</h5>
-				<h3>` + message.Message + `</h3>
-				<img src=` + Logourl + ` />`
-	}
+	titleend = "故障恢复信息"
+	timeobj := time.Unix(int64(message.StartTime), 0)
+	date := timeobj.Format("2006-01-02 15:04:05")
+	model.AlertsFromCounter.WithLabelValues("skywalking", message.AlarmMessage, "4", "", "resolved").Add(1)
+	WXtext = "[" + Title + "skywalking" + message.Name + "]" + "**\n>`告警级别:`" + AlertLevel[4] + "\n`开始时间:`" + date + "\n" + message.AlarmMessage
+	PhoneCallMessage = message.AlarmMessage
 	//触发email
 	if typeid == 1 {
 		if email == "" {
