@@ -41,7 +41,7 @@ func SendMessageSkywalking(message Skywalking, typeid int, logsign, ddurl, wxurl
 	timeobj := time.Unix(int64(message.StartTime), 0)
 	date := timeobj.Format("2006-01-02 15:04:05")
 	model.AlertsFromCounter.WithLabelValues("skywalking", message.AlarmMessage, "4", "", "resolved").Add(1)
-	WXtext = "[" + Title + "skywalking" + message.Name + "]" + "**\n>`告警级别:`" + AlertLevel[4] + "\n`开始时间:`" + date + "\n" + message.AlarmMessage
+	WXtext = "[" + Title + "-skywalking-" + message.Name + "]" + "**\n>`告警级别:`" + AlertLevel[4] + "\n`开始时间:`" + date + "\n" + message.AlarmMessage
 	PhoneCallMessage = message.AlarmMessage
 	//触发email
 	if typeid == 1 {
