@@ -35,12 +35,14 @@ type AlarmMessage struct {
 }
 
 func (c *SkywalkingController) SkywalkingWorkWechat() {
-	alert := []AlarmMessage{}
+	alerts := []AlarmMessage{}
 	logsign := "[" + LogsSign() + "]"
 	logs.Info(logsign, string(c.Ctx.Input.RequestBody))
-	json.Unmarshal(c.Ctx.Input.RequestBody, &alert)
-	c.Data["json"] = SendMessageSkywalking(alert[0], 3, logsign, "", "", "", "", "", "", "", "", "", "", "", "")
-	logs.Info(logsign, c.Data["json"])
+	json.Unmarshal(c.Ctx.Input.RequestBody, &alerts)
+	for _, alert := range alerts {
+		c.Data["json"] = SendMessageSkywalking(alert, 3, logsign, "", "", "", "", "", "", "", "", "", "", "", "")
+		logs.Info(logsign, c.Data["json"])
+	}
 	c.ServeJSON()
 }
 
@@ -51,8 +53,10 @@ func SendMessageSkywalking(message AlarmMessage, typeid int, logsign, ddurl, wxu
 	//告警级别定义 0 信息,1 警告,2 一般严重,3 严重,4 灾难
 	AlertLevel := []string{"信息", "警告", "一般严重", "严重", "灾难"}
 	titleend = "故障恢复信息"
-	timeobj := time.Unix(int64(message.StartTime), 0)
-	date := timeobj.Format("2006-01-02 15:04:05")
+	// 时区
+	loc, _ := time.LoadLocation("Asia/Shanghai")
+	timeObj := time.Unix(message.StartTime, 0).In(loc)
+	date := timeObj.Format("2006-01-02 15:04:05")
 	model.AlertsFromCounter.WithLabelValues("skywalking", message.AlarmMessage, "4", "", "resolved").Add(1)
 	WXtext = "[" + Title + "-skywalking-" + message.Name + "]" + "**\n>`告警级别:`" + AlertLevel[4] + "\n`开始时间:`" + date + "\n" + message.AlarmMessage
 	PhoneCallMessage = message.AlarmMessage
