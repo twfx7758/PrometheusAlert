@@ -12,27 +12,40 @@ type SkywalkingController struct {
 	beego.Controller
 }
 
-type Skywalking struct {
-	ScopeId      int    `json:"scopeid"`
-	Name         string `json:"name"`
-	Id0          int    `json:"id0"`
-	Id1          int    `json:"id1"`
-	AlarmMessage string `json:"alarmmessage"`
-	StartTime    int    `json:"starttime"`
+type KeyStringValuePair struct {
+	Key   string `json:"key,omitempty"`
+	Value string `json:"value,omitempty"`
+}
+
+type AlarmTags struct {
+	// String key, String value pair.
+	Data []*KeyStringValuePair `json:"data,omitempty"`
+}
+
+type AlarmMessage struct {
+	ScopeId      int64      `json:"scopeId,omitempty"`
+	Scope        string     `json:"scope,omitempty"`
+	Name         string     `json:"name,omitempty"`
+	Id0          string     `json:"id0,omitempty"`
+	Id1          string     `json:"id1,omitempty"`
+	RuleName     string     `json:"ruleName,omitempty"`
+	AlarmMessage string     `json:"alarmMessage,omitempty"`
+	StartTime    int64      `json:"startTime,omitempty"`
+	Tags         *AlarmTags `json:"tags,omitempty"`
 }
 
 func (c *SkywalkingController) SkywalkingWorkWechat() {
-	alert := Skywalking{}
+	alert := []AlarmMessage{}
 	logsign := "[" + LogsSign() + "]"
 	logs.Info(logsign, string(c.Ctx.Input.RequestBody))
 	json.Unmarshal(c.Ctx.Input.RequestBody, &alert)
-	c.Data["json"] = SendMessageSkywalking(alert, 12, logsign, "", "", "", "", "", "", "", "", "", "", "", "")
+	c.Data["json"] = SendMessageSkywalking(alert[0], 3, logsign, "", "", "", "", "", "", "", "", "", "", "", "")
 	logs.Info(logsign, c.Data["json"])
 	c.ServeJSON()
 }
 
 //typeid 为0,触发电话告警和钉钉告警, typeid 为1 仅触发dingding告警
-func SendMessageSkywalking(message Skywalking, typeid int, logsign, ddurl, wxurl, fsurl, txdx, txdh, hwdx, rlydh, alydx, alydh, email, bddx, groupid string) string {
+func SendMessageSkywalking(message AlarmMessage, typeid int, logsign, ddurl, wxurl, fsurl, txdx, txdh, hwdx, rlydh, alydx, alydh, email, bddx, groupid string) string {
 	Title := beego.AppConfig.String("title")
 	var DDtext, RLtext, FStext, WXtext, EmailMessage, titleend string
 	//告警级别定义 0 信息,1 警告,2 一般严重,3 严重,4 灾难

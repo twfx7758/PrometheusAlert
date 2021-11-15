@@ -1,0 +1,162 @@
+2021/11/12 13:20:08.937 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/12 13:20:09.050 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/12 13:20:36.096 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     4.6618ms|   match|[44m GET     [0m /     r:/
+2021/11/12 13:21:04.660 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     4.2365ms|   match|[44m GET     [0m /     r:/
+2021/11/12 13:21:06.789 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     3.0078ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:21:07.907 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|    12.6398ms|   match|[44m GET     [0m /template   r:/template
+2021/11/12 13:21:08.857 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     2.9925ms|   match|[44m GET     [0m /markdowntest   r:/markdowntest
+2021/11/12 13:21:09.956 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     4.8069ms|   match|[44m GET     [0m /     r:/
+2021/11/12 13:21:16.483 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     3.5771ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:21:49.973 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     2.0721ms|   match|[44m GET     [0m /metrics   r:/metrics
+2021/11/12 13:21:50.022 [D] [server.go:2878]  |      127.0.0.1|[43m 404 [0m|      620.7µs| nomatch|[44m GET     [0m /favicon.ico
+2021/11/12 13:26:05.994 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     2.6691ms|   match|[44m GET     [0m /static/css/bootstrap.min.css.map
+2021/11/12 13:26:10.243 [I] [default.go:173]  [1636694770242381600] [weixin] {"msgtype":"markdown","markdown":{"content":"[PrometheusAlert](https://github.com/feiyu563/PrometheusAlert)\n\u003e**测试告警**\n\u003e`告警级别:`测试\n**PrometheusAlert**\u003c@jikun.zhang\u003e"}}
+
+2021/11/12 13:26:10.517 [I] [default.go:173]  [1636694770242381600] [weixin] {"errcode":93000,"errmsg":"invalid webhook url, hint: [1636694769_236_6769ff175d899ee88d07feeabbdcb2e4], from ip: 114.246.35.71, more info at https://open.work.weixin.qq.com/devtool/query?e=93000"}
+2021/11/12 13:26:10.517 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|    283.414ms|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 13:34:18.986 [I] [default.go:173]  [1636695258985076300] [weixin] {"msgtype":"markdown","markdown":{"content":"[PrometheusAlert](https://github.com/feiyu563/PrometheusAlert)\n\u003e**测试告警**\n\u003e`告警级别:`测试\n**PrometheusAlert**\u003c@jikun.zhang\u003e"}}
+
+2021/11/12 13:34:19.246 [I] [default.go:173]  [1636695258985076300] [weixin] {"errcode":93000,"errmsg":"invalid webhook url, hint: [1636695258_236_2811070298082c04f44c3b8ee39b0ed6], from ip: 218.241.146.2, more info at https://open.work.weixin.qq.com/devtool/query?e=93000"}
+2021/11/12 13:34:19.261 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|5m55.1606008s|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 13:50:33.280 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     3.6818ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:50:33.305 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     1.9908ms|   match|[44m GET     [0m /static/css/bootstrap.min.css
+2021/11/12 13:50:33.306 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     2.9885ms|   match|[44m GET     [0m /static/css/docs.css
+2021/11/12 13:50:33.313 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      867.7µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:50:33.313 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     1.6437ms|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 13:50:33.313 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     1.8797ms|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 13:50:33.327 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      668.2µs|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 13:50:33.368 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      809.4µs|   match|[44m GET     [0m /static/css/bootstrap.min.css.map
+2021/11/12 13:50:33.387 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|        577µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:50:37.338 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     2.6244ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:50:37.358 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/docs.css
+2021/11/12 13:50:37.358 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      747.8µs|   match|[44m GET     [0m /static/css/bootstrap.min.css
+2021/11/12 13:50:37.365 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      878.6µs|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 13:50:37.365 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      507.5µs|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 13:50:37.366 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      506.7µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:50:37.380 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      885.8µs|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 13:50:37.410 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      909.5µs|   match|[44m GET     [0m /static/css/bootstrap.min.css.map
+2021/11/12 13:50:37.439 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      973.8µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:50:46.282 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     7.7343ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:52:18.421 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     4.1251ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:52:18.439 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/docs.css
+2021/11/12 13:52:18.439 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      581.4µs|   match|[44m GET     [0m /static/css/bootstrap.min.css
+2021/11/12 13:52:18.444 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      915.5µs|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 13:52:18.444 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 13:52:18.445 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      551.2µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:52:18.484 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      780.2µs|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 13:52:18.499 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      971.8µs|   match|[44m GET     [0m /static/css/bootstrap.min.css.map
+2021/11/12 13:52:18.512 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      293.5µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:52:33.048 [I] [default.go:173]  [1636696353047698600] [weixin] {"msgtype":"markdown","markdown":{"content":"[PrometheusAlert](https://github.com/feiyu563/PrometheusAlert)\n\u003e**测试告警**\n\u003e`告警级别:`测试\n**PrometheusAlert**\u003c@jikun.zhang\u003e"}}
+
+2021/11/12 13:52:33.319 [I] [default.go:173]  [1636696353047698600] [weixin] {"errcode":93000,"errmsg":"invalid webhook url, hint: [1636696352_236_681b9ed1e8cf18b431b0b000a0bb22de], from ip: 218.241.146.2, more info at https://open.work.weixin.qq.com/devtool/query?e=93000"}
+2021/11/12 13:52:33.332 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|   5.7799331s|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 13:53:15.738 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     3.1383ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:53:15.768 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     1.0932ms|   match|[44m GET     [0m /static/css/bootstrap.min.css
+2021/11/12 13:53:15.768 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|       59.4µs|   match|[44m GET     [0m /static/css/docs.css
+2021/11/12 13:53:15.770 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      986.2µs|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 13:53:15.770 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 13:53:15.770 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      327.2µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:53:15.783 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      504.6µs|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 13:53:15.833 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|       37.8µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:53:15.854 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      375.8µs|   match|[44m GET     [0m /static/css/bootstrap.min.css.map
+2021/11/12 13:53:16.704 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     2.5162ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:53:16.720 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      454.5µs|   match|[44m GET     [0m /static/css/bootstrap.min.css
+2021/11/12 13:53:16.720 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/docs.css
+2021/11/12 13:53:16.727 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      807.6µs|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 13:53:16.727 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      131.9µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:53:16.728 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      131.9µs|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 13:53:16.739 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      825.4µs|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 13:53:16.792 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     1.4087ms|   match|[44m GET     [0m /static/css/bootstrap.min.css.map
+2021/11/12 13:53:16.796 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      924.1µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:53:17.577 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     3.1514ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 13:53:17.595 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      996.2µs|   match|[44m GET     [0m /static/css/docs.css
+2021/11/12 13:53:17.596 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      2.009ms|   match|[44m GET     [0m /static/css/bootstrap.min.css
+2021/11/12 13:53:17.598 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      743.4µs|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 13:53:17.599 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 13:53:17.599 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:53:17.612 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     1.0137ms|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 13:53:17.642 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      958.5µs|   match|[44m GET     [0m /static/css/bootstrap.min.css.map
+2021/11/12 13:53:17.665 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|      985.8µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 13:53:23.594 [I] [default.go:173]  [1636696403594891000] [weixin] {"msgtype":"markdown","markdown":{"content":"[PrometheusAlert](https://github.com/feiyu563/PrometheusAlert)\n\u003e**测试告警**\n\u003e`告警级别:`测试\n**PrometheusAlert**\u003c@jikun.zhang\u003e"}}
+
+2021/11/12 13:53:23.858 [I] [default.go:173]  [1636696403594891000] [weixin] {"errcode":93000,"errmsg":"invalid webhook url, hint: [1636696403_236_deb15dfc272e5d2d85c365b09561627c], from ip: 114.246.35.71, more info at https://open.work.weixin.qq.com/devtool/query?e=93000"}
+2021/11/12 13:53:23.869 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|   2.2323805s|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 13:54:02.038 [I] [default.go:173]  [1636696436286221400] [weixin] {"msgtype":"markdown","markdown":{"content":"[PrometheusAlert](https://github.com/feiyu563/PrometheusAlert)\n\u003e**测试告警**\n\u003e`告警级别:`测试\n**PrometheusAlert**\u003c@jikun.zhang\u003e"}}
+
+2021/11/12 13:54:02.328 [I] [default.go:173]  [1636696436286221400] [weixin] {"errcode":93000,"errmsg":"invalid webhook url, hint: [1636696441_236_5cf803c2b794f8a551e0b7908b034974], from ip: 114.246.35.71, more info at https://open.work.weixin.qq.com/devtool/query?e=93000"}
+2021/11/12 13:54:15.386 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|  21.5248571s|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 13:55:54.018 [I] [default.go:173]  [1636696554016731600] [weixin] {"msgtype":"markdown","markdown":{"content":"[PrometheusAlert](https://github.com/feiyu563/PrometheusAlert)\n\u003e**测试告警**\n\u003e`告警级别:`测试\n**PrometheusAlert**\u003c@jikun.zhang\u003e"}}
+
+2021/11/12 13:55:54.263 [I] [default.go:173]  [1636696554016731600] [weixin] {"errcode":93000,"errmsg":"invalid webhook url, hint: [1636696553_236_902999e138bc0b70a0097062e2f54129], from ip: 114.246.35.71, more info at https://open.work.weixin.qq.com/devtool/query?e=93000"}
+2021/11/12 13:55:54.263 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|   3.2798013s|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 14:04:48.858 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|  21.1249966s|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 14:05:49.496 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|    4.622146s|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 14:24:46.731 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|   10.121363s|   match|[46m POST    [0m /alerttest   r:/alerttest
+2021/11/12 14:37:47.493 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     3.8494ms|   match|[44m GET     [0m /     r:/
+2021/11/12 14:37:47.513 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      792.9µs|   match|[44m GET     [0m /static/css/bootstrap.min.css
+2021/11/12 14:37:47.513 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/docs.css
+2021/11/12 14:37:47.519 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      811.4µs|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 14:37:47.520 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 14:37:47.522 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      1.006ms|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 14:37:47.543 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      112.8µs|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 14:55:12.009 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     3.0778ms|   match|[44m GET     [0m /     r:/
+2021/11/12 14:55:12.032 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      947.7µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 14:55:12.044 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|        994µs|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 14:55:12.044 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 14:55:12.070 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      365.2µs|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 15:12:32.918 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/12 15:12:32.998 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/12 15:13:05.989 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/12 15:13:06.072 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/12 15:13:14.924 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|     4.2175ms|   match|[44m GET     [0m /test   r:/test
+2021/11/12 15:13:14.943 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      889.3µs|   match|[44m GET     [0m /static/css/bootstrap.min.css
+2021/11/12 15:13:14.943 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      523.9µs|   match|[44m GET     [0m /static/css/docs.css
+2021/11/12 15:13:14.948 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|     1.4045ms|   match|[44m GET     [0m /static/js/jquery-3.3.1.min.js
+2021/11/12 15:13:14.948 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      537.1µs|   match|[44m GET     [0m /static/js/bootstrap.min.js
+2021/11/12 15:13:14.949 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|        554µs|   match|[44m GET     [0m /static/img/prometheus-ico.png
+2021/11/12 15:13:14.975 [D] [server.go:2878]  |      127.0.0.1|[47m 304 [0m|      746.6µs|   match|[44m GET     [0m /static/fonts/glyphicons-halflings-regular.woff2
+2021/11/12 15:26:01.628 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/12 15:26:01.704 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/12 15:27:01.933 [I] [value.go:543]  [1636702016170016900] {"msgtype":"text","message":{"content":"Skywaling alarm: alarmMessage with [DefaultScopeDefine.All]"},"ruleName":"text","ruleUrl":"text","state":"ok"}
+2021/11/15 15:15:47.341 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/15 15:15:47.544 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/15 15:16:43.583 [I] [value.go:543]  [1636960603583695900] "org.apache.skywalking.oap.server.core.alarm.AlarmMessage@76b74e9c"
+2021/11/15 15:18:30.972 [I] [skywalking.go:139]  [1636960603583695900] [workwechat] workwechat未配置未开启状态,请先配置open-workwechat为1
+2021/11/15 15:18:30.972 [I] [value.go:543]  [1636960603583695900] 告警消息发送完成.
+2021/11/15 15:18:30.972 [I] [value.go:543]  [1636960710972639200] "org.apache.skywalking.oap.server.core.alarm.AlarmMessage@263558c9"
+2021/11/15 15:19:14.129 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|2m30.5459994s|   match|[46m POST    [0m /skywalking/workwechat   r:/skywalking/workwechat
+2021/11/15 15:19:14.129 [I] [skywalking.go:139]  [1636960710972639200] [workwechat] workwechat未配置未开启状态,请先配置open-workwechat为1
+2021/11/15 15:19:14.129 [I] [value.go:543]  [1636960754129722500] "org.apache.skywalking.oap.server.core.alarm.AlarmMessage@2d72f75e"
+2021/11/15 15:19:14.130 [I] [value.go:543]  [1636960710972639200] 告警消息发送完成.
+2021/11/15 15:19:14.130 [I] [value.go:543]  [1636960754130859500] "org.apache.skywalking.oap.server.core.alarm.AlarmMessage@1f14f20c"
+2021/11/15 15:19:29.313 [I] [skywalking.go:139]  [1636960754129722500] [workwechat] workwechat未配置未开启状态,请先配置open-workwechat为1
+2021/11/15 15:19:32.680 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|  58.3409955s|   match|[46m POST    [0m /skywalking/workwechat   r:/skywalking/workwechat
+2021/11/15 15:19:32.680 [I] [skywalking.go:139]  [1636960754130859500] [workwechat] workwechat未配置未开启状态,请先配置open-workwechat为1
+2021/11/15 15:19:32.680 [I] [value.go:543]  [1636960754129722500] 告警消息发送完成.
+2021/11/15 15:19:32.680 [I] [value.go:543]  [1636960754130859500] 告警消息发送完成.
+2021/11/15 15:19:32.681 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|  18.5521577s|   match|[46m POST    [0m /skywalking/workwechat   r:/skywalking/workwechat
+2021/11/15 15:19:32.681 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|  18.5505138s|   match|[46m POST    [0m /skywalking/workwechat   r:/skywalking/workwechat
+2021/11/15 15:24:40.050 [I] [value.go:543]  [1636961080050681100] org.apache.skywalking.oap.server.core.alarm.AlarmMessage@641856
+2021/11/15 15:30:46.018 [I] [skywalking.go:139]  [1636961080050681100] [workwechat] workwechat未配置未开启状态,请先配置open-workwechat为1
+2021/11/15 15:30:46.018 [I] [value.go:543]  [1636961080050681100] 告警消息发送完成.
+2021/11/15 15:30:46.018 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m| 6m5.9689421s|   match|[46m POST    [0m /skywalking/workwechat   r:/skywalking/workwechat
+2021/11/15 15:30:52.561 [I] [value.go:543]  [1636961452561364800] [{"scopeId":0,"ruleName":"service_resp_time_rule","alarmMessage":"alarmMessage with [DefaultScopeDefine.All]","startTime":0},{"scopeId":3,"ruleName":"service_resp_time_rule_2","alarmMessage":"anotherAlarmMessage with [DefaultScopeDefine.Endpoint]","startTime":0}]
+2021/11/15 15:32:38.754 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/15 15:32:38.832 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/15 15:34:31.971 [I] [value.go:543]  [1636961671971289900] [{"scopeId":0,"ruleName":"service_resp_time_rule","alarmMessage":"alarmMessage with [DefaultScopeDefine.All]","startTime":0},{"scopeId":3,"ruleName":"service_resp_time_rule_2","alarmMessage":"anotherAlarmMessage with [DefaultScopeDefine.Endpoint]","startTime":0}]
+2021/11/15 15:35:16.865 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/15 15:35:16.946 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/15 15:36:40.610 [I] [value.go:543]  [1636961800610190200] [{"scopeId":0,"ruleName":"service_resp_time_rule","alarmMessage":"alarmMessage with [DefaultScopeDefine.All]","startTime":0},{"scopeId":3,"ruleName":"service_resp_time_rule_2","alarmMessage":"anotherAlarmMessage with [DefaultScopeDefine.Endpoint]","startTime":0}]
+2021/11/15 15:39:40.344 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/15 15:39:40.441 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/15 15:40:44.987 [I] [value.go:543]  [1636962044987050500] [{"scopeId":0,"ruleName":"service_resp_time_rule","alarmMessage":"alarmMessage with [DefaultScopeDefine.All]","startTime":0},{"scopeId":3,"ruleName":"service_resp_time_rule_2","alarmMessage":"anotherAlarmMessage with [DefaultScopeDefine.Endpoint]","startTime":0}]
+2021/11/15 15:41:10.361 [I] [skywalking.go:139]  [1636962044987050500] [workwechat] workwechat未配置未开启状态,请先配置open-workwechat为1
+2021/11/15 15:41:10.361 [I] [value.go:543]  [1636962044987050500] 告警消息发送完成.
+2021/11/15 15:41:10.361 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|  25.3758213s|   match|[46m POST    [0m /skywalking/workwechat   r:/skywalking/workwechat
+2021/11/15 15:42:54.206 [I] [proc.go:255]  [main] 当前版本（Version）4.6.1
+2021/11/15 15:42:54.284 [I] [asm_amd64.s:1581]  http server Running on http://0.0.0.0:8080
+2021/11/15 15:43:21.821 [I] [value.go:543]  [1636962201821512600] [{"scopeId":0,"ruleName":"service_resp_time_rule","alarmMessage":"alarmMessage with [DefaultScopeDefine.All]","startTime":0},{"scopeId":3,"ruleName":"service_resp_time_rule_2","alarmMessage":"anotherAlarmMessage with [DefaultScopeDefine.Endpoint]","startTime":0}]
+2021/11/15 15:43:25.282 [E] [skywalking.go:139]  [1636962201821512600] [workwechat] 发送消息失败: access_token missing, hint: [1636962205_210_0c3c96a6d0b334da649d60c32f599f13], from ip: 114.246.35.71, more info at https://open.work.weixin.qq.com/devtool/query?e=41001
+2021/11/15 15:43:25.282 [I] [skywalking.go:139]  [1636962201821512600] [workwechat] workwechat send ok.
+2021/11/15 15:43:25.282 [I] [value.go:543]  [1636962201821512600] 告警消息发送完成.
+2021/11/15 15:43:25.283 [D] [server.go:2878]  |      127.0.0.1|[42m 200 [0m|   3.4621414s|   match|[46m POST    [0m /skywalking/workwechat   r:/skywalking/workwechat
